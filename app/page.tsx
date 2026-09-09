@@ -28,7 +28,7 @@ export default function Home() {
               className="h-auto w-[240px] row:w-[340px]"
             />
             <h1 className="wd-h1 mt-12 max-w-[16ch] text-[40px] leading-[1.05] font-semibold tracking-[-0.025em] text-balance row:text-[64px]">
-              Small software for specific problems.
+              Software for specific problems.
             </h1>
             <p className="wd-body mt-7 max-w-[62ch] text-pretty text-stone">
               Gooder Software LLC is a software company in Nashville, Tennessee.

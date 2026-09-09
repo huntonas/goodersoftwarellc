@@ -14,7 +14,7 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Small software for specific problems.`,
+    default: `${site.name} — Software for specific problems.`,
     template: `%s — ${site.name}`,
   },
   description: site.description,

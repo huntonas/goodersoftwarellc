@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} — Small software for specific problems.`;
+export const alt = `${site.name} — Software for specific problems.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -79,7 +79,7 @@ export default async function Image() {
               marginTop: 18,
             }}
           >
-            Small software for specific problems.
+            Software for specific problems.
           </div>
         </div>
       </div>
