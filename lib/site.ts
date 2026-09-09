@@ -5,7 +5,8 @@
 export const site = {
   name: "Gooder Software",
   legalName: "Gooder Software LLC",
-  url: "https://goodersoftwarellc.com",
+  /** Canonical host. The apex 308-redirects to www, so www is the real one. */
+  url: "https://www.goodersoftwarellc.com",
   email: "admin@goodersoftwarellc.com",
   location: "Nashville, TN",
   /** Andrew's personal site, linked from the About section. */

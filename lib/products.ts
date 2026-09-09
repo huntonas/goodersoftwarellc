@@ -49,8 +49,8 @@ export const products: Product[] = [
     blurb:
       "A hunting journal that logs every sit and tells you what your seasons have been quietly teaching you.",
     platform: "iPhone",
-    status: "in-development",
-    statusLabel: "In development",
+    status: "shipped",
+    statusLabel: "On the App Store",
     href: "https://www.thestandmobileapp.com/",
   },
 ];

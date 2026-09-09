@@ -86,9 +86,9 @@ export default function PrivacyPage() {
 
       <h3>The Stand</h3>
       <p>
-        The Stand is a hunting journal that records the sits you log and what
-        you noted about them. It is still in development, and this section will
-        be updated to match the app as shipped before it is released.
+        The Stand is a hunting journal. It records the sits you log and the
+        notes you write about them — this is information you enter yourself,
+        and the app does not collect anything you haven&apos;t given it.
       </p>
 
       <h2>Data that stays on your device</h2>
