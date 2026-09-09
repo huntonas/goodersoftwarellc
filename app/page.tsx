@@ -1,69 +1,112 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import { ProductRow } from "@/components/ProductRow";
+import { Masthead } from "@/components/Masthead";
+import { SiteFooter } from "@/components/SiteFooter";
+import { products, productCountLabel } from "@/lib/products";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Masthead />
+
+      <main>
+        {/* Hero */}
+        <section className="border-b border-rule">
+          <div className="shell flex flex-col items-center py-16 text-center row:py-24">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/logo-full.png"
+              alt="Gooder Software LLC"
+              width={977}
+              height={801}
+              priority
+              className="h-auto w-[240px] row:w-[340px]"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <h1 className="wd-h1 mt-12 max-w-[16ch] text-[40px] leading-[1.05] font-semibold tracking-[-0.025em] text-balance row:text-[64px]">
+              Small software for specific problems.
+            </h1>
+            <p className="wd-body mt-7 max-w-[62ch] text-pretty text-stone">
+              Gooder Software LLC is a software company in Nashville, Tennessee.
+              We build a small number of apps for people with a particular
+              problem to solve — a knee to rehab, a trailer to tow, a therapist
+              to find — and we&nbsp;keep working on them after they ship.
+            </p>
+          </div>
+        </section>
+
+        {/* Catalog */}
+        <section id="apps" aria-labelledby="apps-heading" className="scroll-mt-4">
+          <div className="shell py-16 row:py-20">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+              <h2
+                id="apps-heading"
+                className="wd-heading text-[22px] font-semibold tracking-[-0.02em]"
+              >
+                What we make
+              </h2>
+              <p className="wd-body text-[15px] text-stone">
+                {productCountLabel(products.length)}
+              </p>
+            </div>
+
+            <ul className="mt-10 divide-y divide-rule border-t border-b border-rule">
+              {products.map((product) => (
+                <li key={product.name}>
+                  <ProductRow product={product} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* About */}
+        <section
+          id="about"
+          aria-labelledby="about-heading"
+          className="scroll-mt-4 border-t border-rule"
+        >
+          <div className="shell flex flex-col items-center py-16 text-center row:py-20">
+            <h2
+              id="about-heading"
+              className="wd-heading text-[22px] font-semibold tracking-[-0.02em]"
+            >
+              About
+            </h2>
+            <div className="mt-8 max-w-[62ch] space-y-6 text-pretty text-stone">
+              <p>
+                Gooder Software is a one-person studio. The same person designs,
+                builds, tests, and ships every app here, which means there is no
+                roadmap committee and no handoff between the person who has the
+                idea and the person who writes the code. It also means the
+                catalog stays deliberately short.
+              </p>
+              <p>
+                The products don&apos;t have much in common on the surface, but
+                they share a habit: each one replaces a spreadsheet or a guess
+                with a few taps. If you can already do it well in your head,
+                you don&apos;t need the app. If you&apos;ve been keeping it in a
+                notes file for two years, that&apos;s the kind of thing we build.
+              </p>
+              <p className="text-ink">
+                Questions, bugs, or anything else:{" "}
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-rust-deep underline-offset-[6px] hover:underline hover:decoration-rust focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust"
+                >
+                  {site.email}
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <SiteFooter />
+    </>
   );
 }

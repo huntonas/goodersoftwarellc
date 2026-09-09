@@ -1,26 +1,186 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Brand tokens. Light values live on :root; dark mode swaps the same variable
+   names under prefers-color-scheme, so every utility below follows along
+   without a single `dark:` variant in the markup.
+--------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --paper: #ffffff;
+  --paper-sunk: #f7f4f1;
+  --ink: #1e1815;
+  --stone: #6e645b;
+  --rule: #e5ded7;
+  --rust: #be5215;
+  --rust-deep: #8e3d0f;
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #141110;
+    --paper-sunk: #1b1715;
+    --ink: #f2ebe5;
+    --stone: #a89c92;
+    --rule: #2e2724;
+    --rust: #e3763b;
+    --rust-deep: #f0a277;
+    color-scheme: dark;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-ink: var(--ink);
+  --color-stone: var(--stone);
+  --color-rule: var(--rule);
+  --color-rust: var(--rust);
+  --color-rust-deep: var(--rust-deep);
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* 1080px content column */
+  --spacing-shell: 67.5rem;
+
+  /* Product rows stack below this; see ProductRow. */
+  --breakpoint-row: 720px;
+
+  /* Below this the masthead wordmark doesn't fit beside the nav. */
+  --breakpoint-xs: 430px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.6;
+    font-stretch: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--rust);
+    color: var(--paper);
+  }
+}
+
+@layer utilities {
+  /* Archivo's variable width axis, addressed through font-stretch so it still
+     composes with font-weight. Product names are the widest thing on the page;
+     the h1 is the narrowest. */
+  .wd-product {
+    font-stretch: 118%;
+  }
+  .wd-heading {
+    font-stretch: 108%;
+  }
+  .wd-body {
+    font-stretch: 100%;
+  }
+  .wd-h1 {
+    font-stretch: 92%;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: var(--spacing-shell);
+    margin-inline: auto;
+    padding-inline: 28px;
+  }
+}
+
+/* Kill every transition when the visitor has asked for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Windows High Contrast: our inset focus bar is a box-shadow, which forced
+   colors drops. Put a real outline back. */
+@media (forced-colors: active) {
+  a:focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Long-form copy on /privacy, /terms and /support. Same type scale as the
+   home page, just applied to a document instead of a layout.
+--------------------------------------------------------------------------- */
+@layer components {
+  .prose-legal {
+    color: var(--stone);
+  }
+  .prose-legal > * + * {
+    margin-top: 1.25rem;
+  }
+  .prose-legal h2 {
+    font-stretch: 108%;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-top: 3.25rem;
+  }
+  .prose-legal h3 {
+    font-stretch: 108%;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 2rem;
+  }
+  .prose-legal ul {
+    list-style: disc;
+    padding-left: 1.35rem;
+  }
+  .prose-legal li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-legal a {
+    color: var(--rust-deep);
+    text-underline-offset: 6px;
+  }
+  .prose-legal a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--rust);
+  }
+  .prose-legal a:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 4px;
+  }
+  .prose-legal strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Editorial placeholder. Deliberately loud: these must not reach production. */
+  .todo {
+    display: block;
+    border: 1px dashed var(--rust);
+    border-radius: 2px;
+    padding: 0.85rem 1rem;
+    font-size: 15px;
+    color: var(--rust-deep);
+  }
+  .todo::before {
+    content: "TODO — ";
+    font-weight: 600;
+  }
 }
