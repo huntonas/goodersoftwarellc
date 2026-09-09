@@ -24,7 +24,7 @@ export const products: Product[] = [
     platform: "Web",
     status: "shipped",
     statusLabel: "Live",
-    href: "https://goodertherapy.com",
+    href: "https://www.goodertherapy.com/",
   },
   {
     name: "Stride",
@@ -33,7 +33,7 @@ export const products: Product[] = [
     platform: "iPhone",
     status: "shipped",
     statusLabel: "On the App Store",
-    // TODO(andrew): App Store URL.
+    href: "https://www.striderunningapp.com/",
   },
   {
     name: "TowCheck",
@@ -42,7 +42,7 @@ export const products: Product[] = [
     platform: "iPhone",
     status: "shipped",
     statusLabel: "On the App Store",
-    // TODO(andrew): App Store URL.
+    href: "https://towcheckapp.com/",
   },
   {
     name: "The Stand",
@@ -51,6 +51,7 @@ export const products: Product[] = [
     platform: "iPhone",
     status: "in-development",
     statusLabel: "In development",
+    href: "https://www.thestandmobileapp.com/",
   },
 ];
 

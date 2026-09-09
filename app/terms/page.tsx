@@ -174,13 +174,6 @@ export default function TermsPage() {
         {site.legalName}, {site.location} —{" "}
         <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
-      <p className="todo">
-        These terms were drafted to be readable and to cover what the App Store
-        review process expects. They have not been reviewed by a lawyer. Before
-        the first paid release, have Tennessee counsel look at the liability,
-        indemnity, and governing-law sections — and at the medical-disclaimer
-        language for Stride in particular.
-      </p>
     </ContentPage>
   );
 }

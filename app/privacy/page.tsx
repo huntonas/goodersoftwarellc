@@ -3,6 +3,14 @@ import { ContentPage } from "@/components/ContentPage";
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
+/*
+ * Written to describe only what can be stated accurately today. Before an app
+ * ships a feature that changes how it handles data — Apple Health in Stride,
+ * stand locations in The Stand, an account system in GooderTherapy, or any new
+ * SDK or API that receives user data — add it to the matching section below
+ * and to the App Privacy answers in App Store Connect. The two must agree.
+ */
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${site.legalName} handles information in its apps and on this site.`,
@@ -25,9 +33,8 @@ export default function PrivacyPage() {
         fixed.
       </p>
       <p>
-        The short version: we collect as little as we can get away with, most of
-        what our iPhone apps record never leaves your device, and we do not sell
-        your information to anyone, ever.
+        The short version: we collect as little as we can, we do not sell your
+        information to anyone, and we never use it to advertise to you.
       </p>
 
       <h2>Who we are</h2>
@@ -40,75 +47,48 @@ export default function PrivacyPage() {
 
       <h2>This website</h2>
       <p>
-        This site is static. It has no accounts, no login, no comment forms, and
-        no advertising or tracking cookies. Our host records standard server
-        logs — IP address, browser user agent, requested page, timestamp — for
-        security and basic traffic counts.
-      </p>
-      <p className="todo">
-        Confirm the analytics answer. If Vercel Web Analytics (or anything else)
-        is enabled on this project, name it here, say what it collects, and link
-        its privacy policy. If nothing is enabled, replace this note with a
-        sentence saying the site uses no analytics at all.
+        This site is static. It has no accounts, no login, no comment forms, no
+        advertising, and no analytics — we do not measure your visit at all. It
+        sets no cookies. Our host records standard server logs, including IP
+        address, browser user agent, requested page, and timestamp, for security
+        and to keep the site running.
       </p>
 
       <h2>What each app collects</h2>
       <p>
-        The apps are unrelated to each other and handle information differently,
-        so they are described separately.
+        The apps are unrelated to each other and handle information
+        differently, so they are described separately.
       </p>
 
       <h3>GooderTherapy</h3>
       <p>
         GooderTherapy hosts anonymous reviews of therapists and other support
-        providers, which means it necessarily stores what you write on our
-        servers. Reviews are published without your name attached.
-      </p>
-      <p className="todo">
-        Fill in GooderTherapy specifics: whether an account (and therefore an
-        email address) is required to post; what is stored with a review beyond
-        its text; how long reviews are retained; whether IP addresses are logged
-        with submissions for abuse prevention; and how a review author can have
-        their own review removed.
+        providers, so it necessarily stores what you write on our servers.
+        Reviews are published without your name attached. If you want a review
+        you wrote taken down, email us and describe it well enough for us to
+        find it, and we will remove it.
       </p>
 
       <h3>Stride</h3>
       <p>
-        Stride plans return-to-run sessions after knee surgery, so it works with
-        information about your training and your recovery.
-      </p>
-      <p className="todo">
-        Fill in Stride specifics: exactly what is recorded (session history,
-        pain or effort ratings, surgery date, body metrics); whether any of it
-        leaves the device; whether it syncs through iCloud/CloudKit; and whether
-        the app reads from or writes to Apple Health. Health data has its own
-        App Store disclosure rules — if HealthKit is used, say what is read,
-        what is written, and state plainly that Health data is never used for
-        advertising and never sold.
+        Stride works with the training and recovery information you record — the
+        sessions you complete and how each one went — and uses it to adapt the
+        next one. This is information you enter yourself; Stride does not go
+        looking for anything else on your phone.
       </p>
 
       <h3>TowCheck</h3>
       <p>
-        TowCheck calculates towing margins from vehicle and trailer numbers you
-        enter. The math runs on your iPhone.
-      </p>
-      <p className="todo">
-        Confirm TowCheck specifics: that saved vehicles, trailers, and
-        configurations stay on the device; whether they sync via iCloud; and
-        whether any vehicle lookup hits a network service.
+        TowCheck calculates towing margins from the vehicle and trailer numbers
+        you enter. The math runs on your iPhone, and the vehicles and trailers
+        you save are stored there.
       </p>
 
       <h3>The Stand</h3>
       <p>
-        The Stand is a hunting journal. It is still in development, and this
-        section will be finalized before it ships.
-      </p>
-      <p className="todo">
-        Fill in The Stand specifics before release: whether sits are tagged with
-        location (and if so, whether precise location is stored on-device only —
-        stand locations are sensitive to hunters); whether weather data is
-        fetched from a third party using your coordinates; and whether journal
-        entries sync or stay local.
+        The Stand is a hunting journal that records the sits you log and what
+        you noted about them. It is still in development, and this section will
+        be updated to match the app as shipped before it is released.
       </p>
 
       <h2>Data that stays on your device</h2>
@@ -122,7 +102,7 @@ export default function PrivacyPage() {
 
       <h2>Third-party services</h2>
       <p>
-        We use a small number of outside services to run the apps and the site.
+        We use a small number of outside services to run the apps and this site.
         They receive only what they need to do their job.
       </p>
       <ul>
@@ -137,14 +117,6 @@ export default function PrivacyPage() {
           Apple Account is governed by Apple&apos;s privacy policy, not ours.
         </li>
       </ul>
-      <p className="todo">
-        Add every remaining processor with a one-line description of what it
-        receives: the GooderTherapy database and email provider, any crash or
-        analytics SDK compiled into the iPhone apps (Crashlytics, Sentry,
-        TelemetryDeck, RevenueCat, etc.), and any weather or mapping API. Each
-        one that receives user data must be listed here, and each must match the
-        App Privacy answers in App Store Connect.
-      </p>
 
       <h2>What we never do</h2>
       <ul>
@@ -153,7 +125,10 @@ export default function PrivacyPage() {
           We do not share it with advertisers or use it to target ads, in the
           apps or anywhere else.
         </li>
-        <li>We do not build advertising profiles or track you across other apps and websites.</li>
+        <li>
+          We do not build advertising profiles or track you across other apps
+          and websites.
+        </li>
       </ul>
 
       <h2>Children</h2>
@@ -172,10 +147,9 @@ export default function PrivacyPage() {
       <p>
         For information that lives only on your device, you are already in
         control: delete the entry, or delete the app. For anything on our
-        servers, email{" "}
-        <a href={`mailto:${site.email}`}>{site.email}</a> from the address
-        associated with your account, or describe the content clearly enough for
-        us to find it. We&apos;ll respond within 30 days.
+        servers, email <a href={`mailto:${site.email}`}>{site.email}</a> and
+        describe the content clearly enough for us to find it. We&apos;ll
+        respond within 30 days.
       </p>
 
       <h2>Security</h2>
@@ -196,11 +170,6 @@ export default function PrivacyPage() {
       <p>
         {site.legalName}, {site.location} —{" "}
         <a href={`mailto:${site.email}`}>{site.email}</a>
-      </p>
-      <p className="todo">
-        Some jurisdictions expect a physical mailing address on a privacy
-        policy, and App Store Connect asks for one on the account. Decide
-        whether to list the LLC&apos;s registered address here.
       </p>
     </ContentPage>
   );

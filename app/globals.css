@@ -169,18 +169,4 @@
     color: var(--ink);
     font-weight: 600;
   }
-
-  /* Editorial placeholder. Deliberately loud: these must not reach production. */
-  .todo {
-    display: block;
-    border: 1px dashed var(--rust);
-    border-radius: 2px;
-    padding: 0.85rem 1rem;
-    font-size: 15px;
-    color: var(--rust-deep);
-  }
-  .todo::before {
-    content: "TODO — ";
-    font-weight: 600;
-  }
 }

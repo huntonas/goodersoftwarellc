@@ -79,11 +79,19 @@ export default function Home() {
             </h2>
             <div className="mt-8 max-w-[62ch] space-y-6 text-pretty text-stone">
               <p>
-                Gooder Software is a one-person studio. The same person designs,
-                builds, tests, and ships every app here, which means there is no
-                roadmap committee and no handoff between the person who has the
-                idea and the person who writes the code. It also means the
-                catalog stays deliberately short.
+                Gooder Software is a one-person studio, run by{" "}
+                <a
+                  href={site.founderUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-rust-deep underline-offset-[6px] hover:underline hover:decoration-rust focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust"
+                >
+                  {site.founderName}
+                </a>
+                . The same person designs, builds, tests, and ships every app
+                here, which means there is no roadmap committee and no handoff
+                between the person who has the idea and the person who writes
+                the code. It also means the catalog stays deliberately short.
               </p>
               <p>
                 The products don&apos;t have much in common on the surface, but
