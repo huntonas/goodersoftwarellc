@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <ContentPage title="Privacy Policy" updated="February 3, 2026">
+    <ContentPage title="Privacy Policy" updated="September 14, 2026">
       <p>
         This policy covers this website and every app published by{" "}
         {site.legalName} — {products.map((p) => p.name).join(", ")}. It is
@@ -47,11 +47,25 @@ export default function PrivacyPage() {
 
       <h2>This website</h2>
       <p>
-        This site is static. It has no accounts, no login, no comment forms, no
-        advertising, and no analytics — we do not measure your visit at all. It
-        sets no cookies. Our host records standard server logs, including IP
+        This site is static. It has no accounts, no login, no comment forms,
+        and no advertising. Our host records standard server logs, including IP
         address, browser user agent, requested page, and timestamp, for security
         and to keep the site running.
+      </p>
+      <p>
+        We use two tools to count visits. Vercel Web Analytics is cookieless and
+        records only the page viewed and coarse, anonymized device information.
+        Google Analytics sets first-party cookies (<code>_ga</code> and{" "}
+        <code>_ga_*</code>) to tell returning visitors apart and sends your IP
+        address, user agent, and the pages you view to Google, which processes
+        that data under{" "}
+        <a href="https://policies.google.com/privacy">its own privacy policy</a>.
+        We use both only to see which pages people read. You can block Google
+        Analytics with the{" "}
+        <a href="https://tools.google.com/dlpage/gaoptout">
+          Google Analytics opt-out browser add-on
+        </a>{" "}
+        or any content blocker.
       </p>
 
       <h2>What each app collects</h2>
