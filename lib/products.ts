@@ -53,6 +53,15 @@ export const products: Product[] = [
     statusLabel: "On the App Store",
     href: "https://www.thestandmobileapp.com/",
   },
+  {
+    name: "On Your Left",
+    blurb:
+      "A pixel-art arcade game set on a greenway. Dodge joggers, geese, strollers, and deer. Ringing the bell won't help.",
+    platform: "Web, iPhone & Android",
+    status: "shipped",
+    statusLabel: "Live on web · apps in review",
+    href: "https://www.on-your-left.com/",
+  },
 ];
 
 const COUNT_WORDS = [
