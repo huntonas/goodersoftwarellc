@@ -67,8 +67,8 @@ export const products: Product[] = [
     blurb:
       "Recipes, a weekly meal plan, and one grocery list the whole household shares. Works with Claude, if you want it to.",
     platform: "iPhone & Android",
-    status: "in-development",
-    statusLabel: "In App Store review",
+    status: "shipped",
+    statusLabel: "On the App Store & Google Play",
     href: "https://tablekin.app/",
   },
 ];
