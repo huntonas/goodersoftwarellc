@@ -62,6 +62,15 @@ export const products: Product[] = [
     statusLabel: "Live on web · apps in review",
     href: "https://www.on-your-left.com/",
   },
+  {
+    name: "Tablekin",
+    blurb:
+      "Recipes, a weekly meal plan, and one grocery list the whole household shares. Works with Claude, if you want it to.",
+    platform: "iPhone & Android",
+    status: "shipped",
+    statusLabel: "On the App Store & Google Play",
+    href: "https://tablekin.app/",
+  },
 ];
 
 const COUNT_WORDS = [
